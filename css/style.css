@@ -1,0 +1,550 @@
+/* Farm Tracker CSS - My First Web Project! */
+/* Learned CSS from W3Schools and YouTube tutorials */
+
+/* Basic reset - found this on W3Schools */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Navigation bar - took me a while to center everything */
+.navbar {
+    background-color: #2d6a2e;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-logo i {
+    margin-right: 8px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+}
+
+.nav-link:hover {
+    background-color: #1e4a1f;
+    border-radius: 4px;
+}
+
+.nav-link.active {
+    background-color: #1e4a1f;
+    border-radius: 4px;
+}
+
+/* Main container */
+.container {
+    max-width: 1200px;
+    margin: 80px auto 20px;
+    padding: 20px;
+}
+
+/* Forms - used for login and register pages */
+.form-container {
+    background: white;
+    max-width: 450px;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #2d6a2e;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2d6a2e;
+}
+
+.btn-form {
+    width: 100%;
+    padding: 12px;
+    background-color: #2d6a2e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-form:hover {
+    background-color: #1e4a1f;
+}
+
+.form-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-link a {
+    color: #2d6a2e;
+    text-decoration: none;
+}
+
+.form-link a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard styles */
+.dashboard {
+    padding-top: 80px;
+}
+
+.dashboard-header {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+    color: #2d6a2e;
+    margin-bottom: 8px;
+}
+
+/* Statistics cards - learned flex layout from YouTube */
+.dashboard-stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: white;
+    flex: 1;
+    min-width: 200px;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.stat-card i {
+    font-size: 36px;
+    color: #2d6a2e;
+    margin-bottom: 12px;
+}
+
+.stat-card h3 {
+    font-size: 28px;
+    color: #2d6a2e;
+    margin-bottom: 8px;
+}
+
+.stat-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Dashboard action buttons */
+.dashboard-actions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    background: white;
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.action-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.action-btn i {
+    font-size: 32px;
+    color: #2d6a2e;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.action-btn h3 {
+    color: #2d6a2e;
+    margin-bottom: 8px;
+}
+
+/* Tables - struggled with this at first */
+.table-container {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.table-header {
+    background-color: #2d6a2e;
+    color: white;
+    padding: 15px;
+    border-radius: 6px 6px 0 0;
+    margin: -20px -20px 15px -20px;
+}
+
+.table-header h3 {
+    margin: 0;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.table th {
+    background-color: #f8f8f8;
+    color: #2d6a2e;
+    font-weight: bold;
+}
+
+.table tr:hover {
+    background-color: #f8f8f8;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    background-color: #2d6a2e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.btn-small:hover {
+    background-color: #1e4a1f;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Hero section for homepage */
+.hero {
+    background-color: #2d6a2e;
+    color: white;
+    padding: 100px 20px 60px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 0 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #ff6b35;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #e55a2b;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #2d6a2e;
+}
+
+.btn-secondary:hover {
+    background-color: #f0f0f0;
+}
+
+/* Features section */
+.features {
+    padding: 60px 20px;
+    background-color: white;
+}
+
+.features h2 {
+    text-align: center;
+    color: #2d6a2e;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 25px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 42px;
+    color: #2d6a2e;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: #2d6a2e;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    color: #999;
+}
+
+/* Missing styles for homepage */
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-image {
+    font-size: 80px;
+    margin-top: 30px;
+    opacity: 0.3;
+}
+
+.benefits {
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+}
+
+.benefits h2 {
+    text-align: center;
+    color: #2d6a2e;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.benefits-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.benefits-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.benefit-item {
+    margin-bottom: 25px;
+}
+
+.benefit-item i {
+    color: #2d6a2e;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.benefit-item h4 {
+    color: #2d6a2e;
+    margin-bottom: 8px;
+}
+
+.benefit-item p {
+    color: #666;
+}
+
+.benefits-image {
+    font-size: 80px;
+    color: #2d6a2e;
+    text-align: center;
+    opacity: 0.2;
+}
+
+.hamburger {
+    display: none; /* Hide on desktop */
+}
+
+.nav-item {
+    /* Just a list item wrapper */
+}
+
+/* Simple responsive design - learned from W3Schools */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* TODO: Add mobile menu later */
+    }
+    
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 4px 0;
+    }
+    
+    .dashboard-stats,
+    .dashboard-actions,
+    .features-grid,
+    .benefits-content {
+        flex-direction: column;
+    }
+    
+    .hero h1 {
+        font-size: 30px;
+    }
+    
+    .form-container {
+        margin: 80px 15px;
+    }
+}
