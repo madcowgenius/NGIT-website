@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crops Management - Farm Produce Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-seedling"></i>
+                    <span>Farm Tracker</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="crops.html" class="nav-link active">Crops</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="livestock.html" class="nav-link">Livestock</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sales.html" class="nav-link">Sales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reports.html" class="nav-link">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" onclick="api.logout()" class="nav-link">Logout</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1><i class="fas fa-seedling"></i> Crops Management</h1>
+                <p>Manage your crop planting, growth, and harvest records</p>
+            </div>
+
+            <!-- Add Crop Form -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h3>Add New Crop</h3>
+                </div>
+                <form id="cropForm" onsubmit="return addCrop()" style="padding: 20px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div class="form-group">
+                            <label for="crop_name">Crop Name</label>
+                            <input type="text" id="crop_name" name="crop_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="crop_type">Crop Type</label>
+                            <select id="crop_type" name="crop_type" required>
+                                <option value="">Select Type</option>
+                                <option value="maize">Maize</option>
+                                <option value="mahangu">Mahangu</option>
+                                <option value="wheat">Wheat</option>
+                                <option value="vegetables">Vegetables</option>
+                                <option value="fruits">Fruits</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="planting_date">Planting Date</label>
+                            <input type="date" id="planting_date" name="planting_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expected_harvest_date">Expected Harvest Date</label>
+                            <input type="date" id="expected_harvest_date" name="expected_harvest_date">
+                        </div>
+                        <div class="form-group">
+                            <label for="planted_area">Planted Area (hectares)</label>
+                            <input type="number" id="planted_area" name="planted_area" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="planting_cost">Planting Cost (NAD)</label>
+                            <input type="number" id="planting_cost" name="planting_cost" step="0.01" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select id="status" name="status" required>
+                                <option value="planted">Planted</option>
+                                <option value="growing">Growing</option>
+                                <option value="ready_for_harvest">Ready for Harvest</option>
+                                <option value="harvested">Harvested</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label for="notes">Notes</label>
+                            <textarea id="notes" name="notes" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-form" style="margin-top: 20px;">Add Crop</button>
+                </form>
+            </div>
+
+            <!-- Crops List -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h3>Your Crops (<span id="crops-count">0</span>)</h3>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Crop Name</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Area (ha)</th>
+                            <th>Cost</th>
+                            <th>Planted Date</th>
+                            <th>Expected Harvest</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cropsTableBody">
+                        <!-- Crops will load here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Farm Tracker</h3>
+                    <p>Empowering Namibian farmers with digital farm management solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="crops.html">Crops</a></li>
+                        <li><a href="livestock.html">Livestock</a></li>
+                        <li><a href="sales.html">Sales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@farmtracker.na</p>
+                    <p>Phone: +264 XX XXX XXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Farm Produce Tracker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
