@@ -5,9 +5,10 @@ Part-time Group 105
 Submission Date: October 19, 2025
 
 ## Team Members
-- Joyce Waandja (223118540)
+
 - Tjatjitua Tjiyahura (221067264)
 - Marcus Nicodemus (214021254)
+- Hafeni Hashili (217130097)
 
 ---
 
